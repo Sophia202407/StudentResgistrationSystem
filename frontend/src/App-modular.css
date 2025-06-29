@@ -1,0 +1,14 @@
+/* Main App Styles - Imports all modular CSS files */
+
+/* Import all modular CSS files */
+@import './styles/base.css';
+@import './styles/alerts.css';
+@import './styles/buttons.css';
+@import './styles/forms.css';
+@import './styles/tables.css';
+@import './styles/modals.css';
+@import './styles/auth.css';
+@import './styles/user-management.css';
+@import './styles/tabs.css';
+
+/* Any additional global styles specific to the main app can go here */

@@ -1,0 +1,38 @@
+/* Alert Components - Success, error, and info messages */
+
+/* Alert Messages */
+.alert {
+  padding: 16px 20px;
+  margin: 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+
+.alert-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: inherit;
+  padding: 0;
+  margin-left: 16px;
+}
+
+.alert-close:hover {
+  opacity: 0.7;
+}

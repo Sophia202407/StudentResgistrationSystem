@@ -1,12 +1,63 @@
-# React + Vite
+# Student Registration System Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based frontend for the Student Registration System built with Vite. This application provides a clean, modular interface for student self-registration and profile management.
 
-Currently, two official plugins are available:
+## Architecture
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The frontend follows a modular architecture with clearly separated components and services:
 
-## Expanding the ESLint configuration
+### Components (`src/components/`)
+- **LoginForm.jsx** - User authentication form
+- **RegisterForm.jsx** - Student self-registration form with role selection
+- **StudentList.jsx** - Admin/Moderator interface for viewing and managing student profiles
+- **Header.jsx** - Application header component
+- **AlertMessage.jsx** - Reusable alert/notification component
+- **UserProfile.jsx** - User profile management component
+- **AdminDashboard.jsx** - Administrative dashboard
+- **DebugPanel.jsx** - Development debugging utilities
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Services (`src/services/`)
+- **AuthService.js** - Authentication and authorization service with JWT token management
+
+### Main Application
+- **App.jsx** - Main application component that orchestrates authentication flow and role-based interfaces
+- **main.jsx** - Application entry point
+- **App.css** - Application styles
+
+## Features
+
+- **Role-Based Access Control**: Different interfaces for Users, Moderators, and Admins
+- **JWT Authentication**: Secure token-based authentication with automatic token refresh
+- **Student Self-Registration**: Students can register themselves with role selection
+- **Profile Management**: Users can update their own profiles
+- **Admin Interface**: Admins and Moderators can manage all student profiles
+- **Search and Filter**: Search students by name, email, or ID
+- **Responsive Design**: Modern, mobile-friendly UI
+
+## Development
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+```bash
+npm install
+```
+
+### Development Server
+```bash
+npm run dev
+```
+
+### Build for Production
+```bash
+npm run build
+```
+
+## Technology Stack
+
+- **React 18** - UI library
+- **Vite** - Build tool and development server
+- **Axios** - HTTP client for API communication
+- **ESLint** - Code linting and quality assurance

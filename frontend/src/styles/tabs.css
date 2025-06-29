@@ -1,0 +1,206 @@
+/* Tab Navigation Components - Tab layouts and navigation styles */
+
+/* Enhanced Tab Navigation Styles */
+.tab-navigation-container {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+  border-bottom: 1px solid #e1e8ed;
+}
+
+.tab-navigation {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: white;
+  border: 2px solid #e1e8ed;
+  border-radius: 12px;
+  color: #4a5568;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.tab-button:hover::before {
+  left: 100%;
+}
+
+.tab-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-color: #667eea;
+}
+
+.tab-button.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(102, 126, 234, 0.3);
+}
+
+.tab-button.active:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4);
+}
+
+.tab-icon {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.tab-button.active .tab-icon {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+  animation: subtlePulse 2s infinite;
+}
+
+@keyframes subtlePulse {
+  0%, 100% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.tab-button.active::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
+}
+
+.tab-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tab-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.tab-subtitle {
+  font-size: 12px;
+  opacity: 0.7;
+  line-height: 1.2;
+}
+
+.tab-button.active .tab-subtitle {
+  opacity: 0.9;
+}
+
+/* Tab Content Area */
+.admin-dashboard .tab-content {
+  padding: 30px;
+  background: white;
+  min-height: 500px;
+}
+
+/* Enhanced Admin Dashboard Container */
+.admin-dashboard {
+  background: white;
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Add a subtle animation when switching tabs */
+.admin-dashboard .tab-content > * {
+  animation: fadeInTab 0.4s ease-out;
+}
+
+@keyframes fadeInTab {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design for Tabs */
+@media (max-width: 768px) {
+  .tab-navigation {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .tab-button {
+    min-width: 280px;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .tab-navigation-container {
+    padding: 16px;
+  }
+  
+  .admin-dashboard .tab-content {
+    padding: 20px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab-button {
+    min-width: 250px;
+    padding: 14px 16px;
+  }
+  
+  .tab-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+  
+  .tab-title {
+    font-size: 15px;
+  }
+  
+  .tab-subtitle {
+    font-size: 11px;
+  }
+}

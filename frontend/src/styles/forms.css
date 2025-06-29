@@ -1,0 +1,319 @@
+/* Form Components - Form layouts, inputs, and form elements */
+
+/* Enhanced Form Section */
+.form-section {
+  padding: 40px;
+  border-bottom: 1px solid #e2e8f0;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  color: #1e293b;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+}
+
+.form-section p {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 32px;
+  font-size: 1rem;
+}
+
+.form-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+.student-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Compact form layout for add user */
+.compact-form {
+  max-width: 600px;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin: 0 auto;
+  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.compact-form .form-group {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: stretch;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #374151;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+  align-self: flex-start;
+}
+
+.form-input {
+  padding: 16px 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  width: 100%;
+  max-width: 450px;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
+  background: #fefefe;
+}
+
+.form-input:invalid {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+}
+
+.form-input:valid:not(:placeholder-shown) {
+  border-color: #10b981;
+}
+
+/* Enhanced Select Styling */
+select.form-input {
+  background-color: white;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 1rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 3rem;
+  cursor: pointer;
+  appearance: none;
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+
+/* Enhanced Form Help Text */
+.form-help {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.5;
+  padding: 8px 12px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border-left: 3px solid #cbd5e1;
+}
+
+/* Checkbox Group Styling */
+.checkbox-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  justify-content: center;
+  align-items: center;
+  max-width: 450px;
+  width: 100%;
+}
+
+/* Enhanced Role Checkboxes in Modal */
+.role-checkboxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.checkbox-label:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #667eea;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"]:checked + span {
+  color: #667eea;
+  font-weight: 600;
+}
+
+.checkbox-label:has(input:checked) {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-color: #667eea;
+  box-shadow: 0 2px 4px rgba(102, 126, 234, 0.1);
+}
+
+/* Section Header Styles */
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.section-header h2 {
+  color: #2d3748;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.section-header p {
+  color: #6b7280;
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* User Form Section Centering */
+.user-form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+  padding: 20px;
+}
+
+.user-form-section .form-section {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+/* Responsive Design for Forms */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .student-form {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .form-section {
+    padding: 24px 20px;
+  }
+  
+  .user-form-section {
+    padding: 16px;
+    min-height: calc(100vh - 150px);
+  }
+  
+  .compact-form {
+    max-width: 100%;
+  }
+  
+  .compact-form .form-group {
+    max-width: 100%;
+  }
+  
+  .form-input {
+    max-width: 100%;
+  }
+  
+  .checkbox-group {
+    flex-direction: column;
+    gap: 12px;
+    max-width: 100%;
+  }
+  
+  .role-checkboxes {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-input {
+    padding: 14px 16px;
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  .form-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .user-form-section .form-section {
+    margin: 10px;
+  }
+}

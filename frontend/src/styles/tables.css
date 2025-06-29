@@ -1,0 +1,116 @@
+/* Table Components - Table layouts, styling, and responsive behavior */
+
+/* Enhanced Table Styles */
+.table-container {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background: white;
+  margin: 20px 0;
+}
+
+.students-table,
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  font-size: 14px;
+}
+
+.students-table th,
+.students-table td,
+.users-table th,
+.users-table td {
+  padding: 20px 24px;
+  text-align: left;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.students-table th,
+.users-table th {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  font-weight: 600;
+  color: #334155;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.students-table tbody tr,
+.users-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.students-table tbody tr:hover,
+.users-table tbody tr:hover {
+  background-color: #f8fafc;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.students-table tbody tr.editing {
+  background-color: #eff6ff;
+  border-left: 4px solid #3b82f6;
+}
+
+.students-table td:last-child,
+.users-table td:last-child {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.students-table td:first-child,
+.users-table td:first-child {
+  font-weight: 600;
+  color: #475569;
+}
+
+/* Enhanced Column Spacing */
+.students-table th:nth-child(1), .users-table th:nth-child(1) { width: 8%; }   /* ID */
+.students-table th:nth-child(2), .users-table th:nth-child(2) { width: 15%; }  /* Username */
+.students-table th:nth-child(3), .users-table th:nth-child(3) { width: 22%; }  /* Email */
+.students-table th:nth-child(4), .users-table th:nth-child(4) { width: 18%; }  /* Full Name */
+.students-table th:nth-child(5), .users-table th:nth-child(5) { width: 15%; }  /* Roles */
+.students-table th:nth-child(6), .users-table th:nth-child(6) { width: 12%; }  /* Date */
+.students-table th:nth-child(7), .users-table th:nth-child(7) { width: 10%; }  /* Actions */
+
+/* Responsive Table Design */
+@media (max-width: 768px) {
+  .students-table th,
+  .students-table td,
+  .users-table th,
+  .users-table td {
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .students-table,
+  .users-table {
+    font-size: 12px;
+  }
+  
+  .students-table th,
+  .students-table td,
+  .users-table th,
+  .users-table td {
+    padding: 8px 4px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .btn-small {
+    width: 100%;
+    padding: 10px;
+  }
+}
